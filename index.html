@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Web Dev Site</title>
+    <link rel="stylesheet" href="Sindarov.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Sign Up</h1>
+        
+        <div id="successMessage"></div>
+
+        <form onsubmit="return validateForm()">
+            
+            <h3>Basic Information</h3>
+            
+            <div class="field">
+                <label>Full Name:</label>
+                <input type="text" id="fullName" onblur="checkName()">
+                <span id="nameError"></span>
+            </div>
+
+            <div class="field">
+                <label>Birthdate:</label>
+                <input type="date" id="birthdate" onchange="checkBirthdate()">
+                <span id="birthdateError"></span>
+            </div>
+
+            <div class="field">
+                <label>Sex:</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="sex" value="male" onclick="clearSexError()"> Male</label>
+                    <label><input type="radio" name="sex" value="female" onclick="clearSexError()"> Female</label>
+                    <label><input type="radio" name="sex" value="other" onclick="clearSexError()"> Other</label>
+                </div>
+                <span id="sexError"></span>
+            </div>
+
+            <div class="field">
+                <label>Email:</label>
+                <input type="email" id="email" onblur="checkEmail()">
+                <span id="emailError"></span>
+            </div>
+
+            <h3>Account Details</h3>
+            
+            <div class="field">
+                <label>Username:</label>
+                <input type="text" id="username" onblur="checkUsername()">
+                <span id="usernameError"></span>
+            </div>
+
+            <div class="field">
+                <label>Password:</label>
+                <input type="password" id="password" onblur="checkPassword()">
+                <span id="passwordError"></span>
+            </div>
+
+            <div class="field">
+                <label>Confirm Password:</label>
+                <input type="password" id="confirmPassword" onblur="checkConfirm()">
+                <span id="confirmError"></span>
+            </div>
+
+            <h3>Web Development Questions</h3>
+            
+            <div class="field">
+                <label>Favorite HTML Version:</label>
+                <select id="htmlVersion" onchange="clearHtmlError()">
+                    <option value="">-- choose --</option>
+                    <option value="html5">HTML5</option>
+                    <option value="html4">HTML4</option>
+                </select>
+                <span id="htmlError"></span>
+            </div>
+
+            <div class="field">
+                <label>Skills (pick at least one):</label>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="skills" value="html" onclick="clearSkillsError()"> HTML</label>
+                    <label><input type="checkbox" name="skills" value="css" onclick="clearSkillsError()"> CSS</label>
+                    <label><input type="checkbox" name="skills" value="js" onclick="clearSkillsError()"> JavaScript</label>
+                </div>
+                <span id="skillsError"></span>
+            </div>
+
+            <div class="field">
+                <label>Weeks coding per month:</label>
+                <input type="number" id="codingWeeks" min="0" max="4" onchange="checkWeeks()">
+                <span id="weeksError"></span>
+            </div>
+
+            <button type="submit">Join Web Dev Community!</button>
+            <p><a href="index.html">← Back to Home</a></p>
+        </form>
+    </div>
+    
+    <script src="Carlsen.js"></script>
+</body>
+</html>
