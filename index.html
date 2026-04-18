@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Web Dev Site</title>
+    <link rel="stylesheet" href="Sindarov.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Sign Up for Wonders of the Deep!</h1>
+        
+        <div id="successMessage"></div>
+
+        <form onsubmit="return validateForm()">
+            
+            <h3>Basic Information</h3>
+            
+            <div class="field">
+                <label>Full Name:</label>
+                <input type="text" id="fullName" onblur="checkName()">
+                <span id="nameError"></span>
+            </div>
+
+            <div class="field">
+                <label>Birthdate:</label>
+                <input type="date" id="birthdate" onchange="checkBirthdate()">
+                <span id="birthdateError"></span>
+            </div>
+
+            <div class="field">
+                <label>Sex:</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="sex" value="male" onclick="clearSexError()"> Male</label>
+                    <label><input type="radio" name="sex" value="female" onclick="clearSexError()"> Female</label>
+                    <label><input type="radio" name="sex" value="other" onclick="clearSexError()"> Other</label>
+                </div>
+                <span id="sexError"></span>
+            </div>
+
+            <div class="field">
+                <label>Email:</label>
+                <input type="email" id="email" onblur="checkEmail()">
+                <span id="emailError"></span>
+            </div>
+
+            <h3>Account Details</h3>
+            
+            <div class="field">
+                <label>Username:</label>
+                <input type="text" id="username" onblur="checkUsername()">
+                <span id="usernameError"></span>
+            </div>
+
+            <div class="field">
+                <label>Password:</label>
+                <input type="password" id="password" onblur="checkPassword()">
+                <span id="passwordError"></span>
+            </div>
+
+            <div class="field">
+                <label>Confirm Password:</label>
+                <input type="password" id="confirmPassword" onblur="checkConfirm()">
+                <span id="confirmError"></span>
+            </div>
+
+            <h3>Your Marine Experience</h3>
+            
+            <div class="field">
+                <label>Ocean conservation knowledge:</label>
+                <select id="oceanKnowledge" onchange="clearKnowledgeError()">
+                    <option value="">-- choose --</option>
+                    <option value="beginner">Beginner</option>
+                    <option value="some">Some knowledge</option>
+                    <option value="expert">Experienced</option>
+                </select>
+                <span id="knowledgeError"></span>
+            </div>
+
+            <div class="field">
+                <label>Marine activities you've done:</label>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="marineExp" value="beach-cleanup" onclick="clearExpError()"> Beach cleanups</label>
+                    <label><input type="checkbox" name="marineExp" value="diving" onclick="clearExpError()"> Scuba diving</label>
+                    <label><input type="checkbox" name="marineExp" value="volunteer" onclick="clearExpError()"> Marine volunteering</label>
+                </div>
+                <span id="expError"></span>
+            </div>
+
+            <div class="field">
+                <label>Years interested in oceans:</label>
+                <input type="number" id="oceanYears" min="0" onchange="checkYears()">
+                <span id="yearsError"></span>
+            </div>
+
+            <button type="submit">Join the Wonders of the Deep Community!</button>
+            <p><a href="https://michael-jordan-23-6.github.io/DeVera_Calcium_Final-Project/">← Back to Home</a></p>
+        </form>
+    </div>
+    
+    <script src="Carlsen.js"></script>
+</body>
+</html>
